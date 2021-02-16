@@ -1,4 +1,4 @@
-// LinkedList.cpp : This file contains the 'main' function. Program execution begins and ends there.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    // LinkedList.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #include <iostream>
@@ -9,11 +9,20 @@ int main()
 {
 	LinkedList l;
 	l.insertBack(3);
-	l.insertFront(4);
-	l.insertFront(5);
+	l.insertBack(3);
+	l.insertBack(3);
+	l.insertBack(4);
+	l.insertBack(5);
 	l.insertBack(7);
+	l.insertBack(7);
+	l.insertBack(7);
+	l.insertBack(7);
+	l.insertBack(5);
+	//l.delConsecutiveDuplicates();
 	l.printList();
-	l.reverse();
+	l.removeAll(3);
+	l.printList();
+	/*l.reverse();
 	std::cout << l.size() << "\n";
 	l.printList();
 	l.Remove(3);
@@ -24,7 +33,7 @@ int main()
 	std::cout << l.size() << "\n";
 	l.Remove(5);
 	l.printList();
-	std::cout << l.size() << "\n";
+	std::cout << l.size() << "\n";*/
 	return 0;
 }
 

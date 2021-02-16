@@ -193,9 +193,62 @@ void LinkedList::reverse()
 
 void LinkedList::delConsecutiveDuplicates()
 {
+	Node* nodeptr = head;
+	Node* nextptr = head->next;
+	while (nextptr and nodeptr) {
+		int temp;
+		
+		if (nextptr->data == nodeptr->data) {
+			nodeptr->next = nextptr->next;
+			 delete nextptr;
+			--numele;
+			//std::cout << "in if nodep : " << nodeptr->data << "   nextptr  " << std::endl;
+		}
+		else {
+			/*nodeptr = nextptr;*/
+			nodeptr = nodeptr->next;
+			nextptr = nextptr->next;
+			//std::cout << " in else :" << nodeptr->data << "   nextptr  " << nextptr->data << std::endl;
+		}
+		nextptr = nodeptr->next;
+	}
 	//TODO
+	
 }
 void LinkedList::removeAll(int n)
 {
+	if (head == nullptr)
+		return;
+	else {
+		Node* previous = head;
+		Node* following = head->next;
+		while (following and previous)
+		{
+			if (head->data == n)
+			{
+				Node* todelete = head;
+				head = head->next;
+				delete todelete;
+				--numele;
+				previous = head;
+				following = head->next;
+			}
+			else if (following->data == n)
+			{
+				previous->next = following->next;
+				delete following;
+				--numele;
+				following = previous->next;
+			}
+			else {
+				previous = previous->next;
+				following = following->next;
+			}
+			
+		
+		}
+		
+		
+	}
 	//TODO
 }
